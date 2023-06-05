@@ -8,6 +8,10 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
     library.push(this)
+    //const bookdisplay = document.bookdisplay
+    //const card = document.createElement('div class card')
+    // bookdisplay.append('card')
+    // card.textContent = ''
     // the constructor...
 };
 
@@ -17,15 +21,17 @@ function addBookToLibrary(title, author, pages, read) {
 
 };
 
-function removeBook() {
+function removeBook(index) {
+    //remove library index
     // remove from array and DOM
 }
 
-function toggleRead() {
+function toggleRead(index) { // move to prototype?
+    //book index, if read => unread, if unread => read
     // toggle read status
 }
 
-function editBook(){}
+function editBook(){} // move to prototype?
 
 function displayBooks() {
 
