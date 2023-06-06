@@ -1,7 +1,43 @@
 /* pre-style book cards & text, gradients, fx,
    flex header, book display grid.
 */
+/*.card h1 {
+    margin: 0;
+    padding: 0;
+}*/
+html, body{margin: 0; padding: 0;}
+
+.header {
+    background-color: thistle;
+}
+
+.bookdisplay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
 
 .card {
-    
+    background-color: teal;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50vw;
+    gap: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-radius: 1em;
+}
+
+.sectionOne {
+    display: flex;
+    align-items: center;
+    margin-left: 2em;
+}
+
+.card .read {
+    justify-self: flex-end;
+    background-color: orange;
+    margin-right: 2em;
 }

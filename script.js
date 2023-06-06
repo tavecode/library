@@ -47,13 +47,34 @@ function displayBooks() {
         let card = document.createElement('div')
         card.classList.add('card');
         bookdisplay.append(card)
-        card.textContent = `${library[i].title}, by ${library[i].author}, ${library[i].pages} pages long, read: ${library[i].read}`
+//        card.textContent = `${library[i].title}, by ${library[i].author}, ${library[i].pages} pages long, read: ${library[i].read}`
+        
+        let sectionOne = document.createElement('div')
+        sectionOne.classList.add('sectionOne');
+        card.append(sectionOne)
+        let title = document.createElement('div');
+        title.classList.add('title');
+        title.textContent = `${library[i].title}`;
+        sectionOne.appendChild(title);
+        let author = document.createElement('div');
+        author.classList.add('author');
+        author.textContent = `by ${library[i].author}`;
+        sectionOne.appendChild(author);
+        let pages = document.createElement('div');
+        pages.classList.add('pages');
+        pages.textContent = `${library[i].pages} pages`;
+        sectionOne.appendChild(pages);
+        let read = document.createElement('div');
+        read.classList.add('read');
+        read.textContent = `${library[i].read}`;
+        card.appendChild(read);
+
         //append div
         //div.textContent = library[i].item (for all info)
     };
 
-//addBookToLibrary('ogngh', 'fsda', '6', 'no')
-//addBookToLibrary('fxcvdv', 'fsdfs', '6', 'yes')
+//addBookToLibrary('ogngh', 'fsda', '6', 'unread')
+//addBookToLibrary('fxcvdvdasdad', 'fsdfsASs', '6', 'read')
 
 
 
