@@ -19,15 +19,36 @@ function addBookToLibrary(title, author, pages, read) {
 };
 
 function removeBook(index) {
+  //  let index = library.indexOf(value);
+    if (index > -1) {
+      library.splice((index-1), 1);
+    }
+    displayBooks()
+    return library;
+    
+        //loop until index
     //remove library index
     // remove from array and DOM
-}
+};
+
+
+
+/*
+readtxt.addEventListener('click' () => {
+    identify index
+    alter read
+    update display
+});
+
+
+
 
 function toggleRead(index) { // move to prototype?
+    // alter array items
     //book index, if read => unread, if unread => read
     // toggle read status
 }
-
+*/
 //function editBook(){} // move to prototype?
 
 function displayBooks() {
@@ -113,8 +134,9 @@ window.addEventListener("DOMContentLoaded", () => {
 // submit add event listener, prevent default
 // trigger add function, pass params
 
+// if checked read/unread, green/red
 // add remove and toggle read buttons, ckeck icon :after
-// combine addbook and displaybook functions, refactor
+
 
 // style/position/popup form
 // sign in/storage? array as cookies, display onload
@@ -126,7 +148,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-
+// combine addbook and displaybook functions, refactor
 //function rearrange() {}
 
 //for in,   onscreen txtcontent, append child to bookdisplay,
