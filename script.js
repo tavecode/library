@@ -1,3 +1,6 @@
+
+
+
 let library = [
     //store books
 ];
@@ -8,6 +11,7 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
     library.push(this)
+
     //const bookdisplay = document.bookdisplay
     //const card = document.createElement('div class card')
     // bookdisplay.append('card')
@@ -34,14 +38,24 @@ function toggleRead(index) { // move to prototype?
 function editBook(){} // move to prototype?
 
 function displayBooks() {
+    const bookdisplay = document.querySelector('.bookdisplay')
 
     for (let i in library) {
         console.log(
             `${library[i].title}, by ${library[i].author}, ${library[i].pages} pages long, read: ${library[i].read}`
         )
+        let card = document.createElement('div')
+        card.classList.add('card');
+        bookdisplay.append(card)
+        card.textContent = `${library[i].title}, by ${library[i].author}, ${library[i].pages} pages long, read: ${library[i].read}`
         //append div
         //div.textContent = library[i].item (for all info)
     };
+
+//addBookToLibrary('ogngh', 'fsda', '6', 'no')
+//addBookToLibrary('fxcvdv', 'fsdfs', '6', 'yes')
+
+
 
     // display in DOM
         
