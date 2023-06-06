@@ -74,11 +74,18 @@ window.addEventListener("DOMContentLoaded", () => {
     const submitbtn = document.querySelector('#submit');
     submitbtn.addEventListener("click", function(e){
     e.preventDefault();
+    });
+
+    const titleInput = document.querySelector('#title');
+    const authorInput = document.querySelector('#author');
+    const pagesInput = document.querySelector('#pages');
+    const readInput = document.querySelector('#read');
+
 
     submitbtn.addEventListener('click', () => {
-        
+        addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readInput.value)
     })
-})});
+});
 
 
 
@@ -103,7 +110,7 @@ window.addEventListener("DOMContentLoaded", () => {
 // combine addbook and displaybook functions, refactor
 
 // style/position/popup form
-// sign in/storage?
+// sign in/storage? array as cookies, display onload
 // move sections
 // experiment with layout, color scheme, shadows, gradients, icons
 
