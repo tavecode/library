@@ -11,45 +11,11 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
     library.push(this)
-
-    const bookdisplay = document.querySelector('.bookdisplay')
-    
-    let card = document.createElement('div')
-    card.classList.add('card');
-    bookdisplay.append(card)
-//        card.textContent = `${library[i].title}, by ${library[i].author}, ${library[i].pages} pages long, read: ${library[i].read}`
-    
-    let sectionOne = document.createElement('div')
-    sectionOne.classList.add('sectionOne');
-    card.append(sectionOne)
-    let titletxt = document.createElement('div');
-    titletxt.classList.add('title');
-    titletxt.textContent = `${this.title}`;
-    sectionOne.appendChild(titletxt);
-    let authortxt = document.createElement('div');
-    authortxt.classList.add('author');
-    authortxt.textContent = `${this.author}`;
-    sectionOne.appendChild(authortxt);
-    let pagestxt = document.createElement('div');
-    pagestxt.classList.add('pages');
-    pagestxt.textContent = `${this.pages} pages`;
-    sectionOne.appendChild(pagestxt);
-    let readtxt = document.createElement('div');
-    readtxt.classList.add('read');
-    readtxt.textContent = `${this.read}`;
-    card.appendChild(readtxt);
-
-    //const bookdisplay = document.bookdisplay
-    //const card = document.createElement('div class card')
-    // bookdisplay.append('card')
-    // card.textContent = ''
-    // the constructor...
 };
 
 function addBookToLibrary(title, author, pages, read) {
     new Book(title, author, pages, read);
-        // do stuff here
-
+    displayBooks()
 };
 
 function removeBook(index) {
@@ -62,45 +28,59 @@ function toggleRead(index) { // move to prototype?
     // toggle read status
 }
 
-function editBook(){} // move to prototype?
+//function editBook(){} // move to prototype?
 
-/*function displayBooks() {
+function displayBooks() {
     const bookdisplay = document.querySelector('.bookdisplay')
-
+    function removeAllChildNodes(parent) {
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+    }
+    removeAllChildNodes(bookdisplay)
     for (let i in library) {
-        console.log(
-            `${library[i].title}, by ${library[i].author}, ${library[i].pages} pages long, read: ${library[i].read}`
-        )
-        
-
         let card = document.createElement('div')
         card.classList.add('card');
         bookdisplay.append(card)
-//        card.textContent = `${library[i].title}, by ${library[i].author}, ${library[i].pages} pages long, read: ${library[i].read}`
         
         let sectionOne = document.createElement('div')
         sectionOne.classList.add('sectionOne');
         card.append(sectionOne)
-        let title = document.createElement('div');
-        title.classList.add('title');
-        title.textContent = `${library[i].title}`;
-        sectionOne.appendChild(title);
-        let author = document.createElement('div');
-        author.classList.add('author');
-        author.textContent = `by ${library[i].author}`;
-        sectionOne.appendChild(author);
-        let pages = document.createElement('div');
-        pages.classList.add('pages');
-        pages.textContent = `${library[i].pages} pages`;
-        sectionOne.appendChild(pages);
-        let read = document.createElement('div');
-        read.classList.add('read');
-        read.textContent = `${library[i].read}`;
-        card.appendChild(read);
 
-        //append div
-        //div.textContent = library[i].item (for all info)
-    };
+        let titletxt = document.createElement('div');
+        titletxt.classList.add('title');
+        titletxt.textContent = `${library[i].title}`;
+        sectionOne.append(titletxt);
+
+        let authortxt = document.createElement('div');
+        authortxt.classList.add('author');
+        authortxt.textContent = `${library[i].author}`;
+        sectionOne.append(authortxt);
+
+        let pagestxt = document.createElement('div');
+        pagestxt.classList.add('pages');
+        pagestxt.textContent = `${library[i].pages} pages`;
+        sectionOne.append(pagestxt);
+
+        let readtxt = document.createElement('div');
+        readtxt.classList.add('read');
+        readtxt.textContent = `${library[i].read}`;
+        card.append(readtxt);
+    }
+
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    const submitbtn = document.querySelector('#submit');
+    submitbtn.addEventListener("click", function(e){
+    e.preventDefault();
+
+    submitbtn.addEventListener('click', () => {
+        
+    })
+})});
+
+
 
 //addBookToLibrary('ogngh', 'fsda', '6', 'unread')
 //addBookToLibrary('fxcvdvdasdad', 'fsdfsASs', '6', 'read')
@@ -112,7 +92,7 @@ function editBook(){} // move to prototype?
 //Write a function that loops through the array and displays each book on the page.
 //You can display them in some sort of table, or each on their own “card”.
 //It might help for now to manually add a few books to your array so you can see the display.
-}*//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // PREVENT DUPLICATION ***
 
@@ -124,6 +104,7 @@ function editBook(){} // move to prototype?
 
 // style/position/popup form
 // sign in/storage?
+// move sections
 // experiment with layout, color scheme, shadows, gradients, icons
 
 
