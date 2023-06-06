@@ -85,6 +85,24 @@ function displayBooks() {
 //It might help for now to manually add a few books to your array so you can see the display.
 }
 
+// PREVENT DUPLICATION
+
+// submit add event listener, prevent default
+// trigger add function, pass params
+
+// add remove and toggle read buttons, ckeck icon :after
+// combine addbook and displaybook functions, refactor
+
+// style/position/popup form
+// sign in/storage?
+// experiment with layout, color scheme, shadows, gradients, icons
+
+
+
+
+
+
+
 //function rearrange() {}
 
 //for in,   onscreen txtcontent, append child to bookdisplay,
