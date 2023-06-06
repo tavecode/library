@@ -76,14 +76,21 @@ window.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     });
 
-    const titleInput = document.querySelector('#title');
-    const authorInput = document.querySelector('#author');
-    const pagesInput = document.querySelector('#pages');
-    const readInput = document.querySelector('#read');
-
-
     submitbtn.addEventListener('click', () => {
-        addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readInput.value)
+        const titleInput = document.querySelector('#title');
+        const authorInput = document.querySelector('#author');
+        const pagesInput = document.querySelector('#pages');
+        const checked = document.querySelector('input[name=readstatus]:checked');
+
+        addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, checked.value);
+
+        titleInput.value = '';
+        authorInput.value = '';
+        pagesInput.value = '';
+        
+        let radiobtns = document.getElementsByName("readstatus");
+        for(let i = 0; i <radiobtns.length;i++)
+        radiobtns[i].checked = false;
     })
 });
 
