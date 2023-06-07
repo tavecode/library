@@ -93,10 +93,19 @@ function displayBooks() {
         pagestxt.textContent = `${library[i].pages} pages`;
         sectionOne.append(pagestxt);
 
+        let sectionButtons = document.createElement('div')
+        sectionButtons.classList.add('sectionButtons');
+        card.append(sectionButtons);
+
+        let removebtn = document.createElement('button');
+        removebtn.classList.add('remove');
+        removebtn.textContent = 'REMOVE';
+        sectionButtons.append(removebtn);
+
         let readtxt = document.createElement('button');
         readtxt.classList.add('read');
         readtxt.textContent = `${library[i].read}`;
-        card.append(readtxt);
+        sectionButtons.append(readtxt);
         // convert remove/read to button corresponds with number, alter array
         // section two for read and remove buttons
         // align buttons (try grid auto rows column start/end)
