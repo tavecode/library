@@ -66,11 +66,17 @@ function displayBooks() {
     for (let i in library) {
         let card = document.createElement('div')
         card.classList.add('card');
-        bookdisplay.append(card)
+        bookdisplay.append(card);
         
         let sectionOne = document.createElement('div')
         sectionOne.classList.add('sectionOne');
-        card.append(sectionOne)
+        card.append(sectionOne);
+
+        card.dataset.number = (Number(i) + 1);      // card.dataList.add(data-key)
+        let bookNumber = document.createElement('div')
+        bookNumber.textContent = `${card.dataset.number}.`
+        bookNumber.classList.add('bookNumber')
+        sectionOne.append(bookNumber);
 
         let titletxt = document.createElement('div');
         titletxt.classList.add('title');
@@ -91,8 +97,6 @@ function displayBooks() {
         readtxt.classList.add('read');
         readtxt.textContent = `${library[i].read}`;
         card.append(readtxt);
-
-        card.dataset.number = (Number(i) + 1);      // card.dataList.add(data-key)
     }
 
 }
