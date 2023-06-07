@@ -24,7 +24,7 @@ function removeBook(index) {
 
   //  let index = library.indexOf(value);
     if (index > -1) {
-      library.splice((index-1), 1);
+      library.splice(index, 1); //((index-1), 1);
     }
     displayBooks()
     return library;
@@ -101,6 +101,12 @@ function displayBooks() {
         removebtn.classList.add('remove');
         removebtn.textContent = 'REMOVE';
         sectionButtons.append(removebtn);
+        removebtn.addEventListener('click', () => {
+            if (library[i]!= undefined) {
+                removeBook(i);
+                displayBooks();
+            }
+        });
 
         let readtxt = document.createElement('button');
         readtxt.classList.add('read');
