@@ -109,7 +109,13 @@ function displayBooks() {
         });
 
         let readtxt = document.createElement('button');
-        readtxt.classList.add('read');
+        if (library[i].read == 'Read') {
+            readtxt.classList.add('read');   
+        }
+        else if (library[i].read == 'Unread') {
+            readtxt.classList.add('unread');
+        }
+        readtxt.classList.add('readbtn');
         readtxt.textContent = `${library[i].read}`;
         sectionButtons.append(readtxt);
         // convert remove/read to button corresponds with number, alter array
@@ -168,8 +174,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // PREVENT DUPLICATION ***
 
-// submit add event listener, prevent default
-// trigger add function, pass params
+// submit add event listener, prevent default ***
+// trigger add function, pass params ***
 
 // if checked read/unread, green/red
 // add remove and toggle read buttons, ckeck icon :after
@@ -179,7 +185,7 @@ window.addEventListener("DOMContentLoaded", () => {
 // sign in/storage? array as cookies, display onload
 // move sections
 // experiment with layout, color scheme, shadows, gradients, icons
-
+// rearrange and edit books
 
 
 

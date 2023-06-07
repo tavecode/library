@@ -50,8 +50,16 @@ html, body{margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif;}
     font-style: italic;
 }
 
-.card .read {
+.card .readbtn {
     justify-self: flex-end;
-    background-color: orange;
     margin-right: 2em;
+}
+.read {
+    background-color: green;
+}
+.unread {
+    background-color: red;
+}
+.removebtn {
+
 }
