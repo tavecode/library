@@ -1,37 +1,120 @@
-/* pre-style book cards & text, gradients, fx,
-   flex header, book display grid.
-*/
-/*.card h1 {
-    margin: 0;
-    padding: 0;
-}*/
-html, body{margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif;}
+:root {
+    --w: #fff1f2;
+    --l: #fecdd3;
+    --medl: #fb7185;
+    --medd: #e11d48;
+    --d: #9f1239;
+    --b: #4c0519;
+    --g: #4ade80;
+    /* teal, thistle */
+}
+
+html, body {
+    margin: 0; 
+    padding: 0; 
+    font-family: Arial, Helvetica, sans-serif; 
+    background-color: var(--w); 
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: max-content 1fr 4rem;
+}
 
 .header {
-    background-color: thistle;
+    grid-area: 1 / 1 / 2 / 3;
+    background-image: linear-gradient(to right, var(--b), var(--d));
+    color: var(--w);
+    margin: 0px 0px 2rem 0px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    font-size: 32px;
+    box-shadow: 3px 3px 8px grey;
+}
+.header h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 4rem;
+}
+
+form {
+    margin-left: 4rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 6em 2em 2em 2em 2em;
+}
+
+label {
+    display: none;
+}
+fieldset label {
+    display: inline-block;
+    margin-left: 2em;
+    font-weight: 700;
+}
+
+fieldset {
+    border: none;
+}
+
+input {
+    font-size: 1rem;
+    border: 1px solid var(--b);
+    border-radius: 0.2em;
+    margin: 2px;
+}
+
+input::placeholder{
+    color: var(--d);
+}
+
+#submit {
+    font-size: 1rem;
+    background-color: var(--medl);
+    font-weight: 900;
+    border: none;
+    border-radius: 4px;
+    padding: 4px;
+    margin-left: 3rem;
 }
 
 .bookdisplay {
+    grid-area: 2 / 2 / 3 / 3;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 0;
 }
 
 .card {
-    background-color: teal;
+    background-color: var(--b);
+    color: var(--w);
     display: flex;
     align-items: center;
     justify-content: space-between;
     min-width: max-content;
-    width: 50vw;
-    gap: 2em;
+    width: 60vw;
+    gap: 3rem;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     border-radius: 0.5em;
     font-size: 24px;
     font-weight: 900;
+    box-shadow: 3px 3px 8px grey;
+    transition: 0.3s;
 }
+/*.card:hover {
+    font-size: 28px;
+}*/
 
 .sectionOne {
     display: flex;
@@ -43,7 +126,7 @@ html, body{margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif;}
     display: flex;
     align-items: center;
     margin-left: 2em;
-    gap: 0.5em;
+    gap: 0.75rem;
 }
 
 .title {
@@ -52,14 +135,40 @@ html, body{margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif;}
 
 .card .readbtn {
     justify-self: flex-end;
-    margin-right: 2em;
+    margin-right: 0.5em;
+    height: 2rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    border: none;
+    color: var(--b);
+    border-radius: 4px;
 }
 .read {
-    background-color: green;
+    background-color: var(--g);
 }
 .unread {
-    background-color: red;
+    background-color: var(--medl);
 }
-.removebtn {
-
+.remove {
+    height: 2rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    border: none;
+    color: var(--b);
+    border-radius: 4px;
+    background-color: white;
+}
+.footer {
+    grid-area: 3 / 1 / 3 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 10rem;
+    background-image: linear-gradient(to bottom right, var(--d), var(--medl));
+}
+.footer a {
+    color: var(--g);
+    font-size: 1.5rem;
+    font-weight: 900;
 }

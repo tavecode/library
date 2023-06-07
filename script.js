@@ -1,4 +1,4 @@
-
+// Library App
 
 
 let library = [
@@ -13,47 +13,24 @@ function Book(title, author, pages, read) {
     library.push(this)
 };
 
+
+
 function addBookToLibrary(title, author, pages, read) {
     new Book(title, author, pages, read);
     displayBooks()
 };
 
+
+
 function removeBook(index) {
-    // select by nth child? input (numbered books)?
-
-
-  //  let index = library.indexOf(value);
     if (index > -1) {
-      library.splice(index, 1); //((index-1), 1);
+      library.splice(index, 1);
     }
     displayBooks()
     return library;
-    
-        //loop until index
-    //remove library index
-    // remove from array and DOM
 };
 
 
-
-/*
-readtxt.addEventListener('click' () => {
-    identify index
-    if statement (if this.read ==)
-    alter read (this.read =)
-    update display
-});
-
-
-
-
-function toggleRead(index) { // move to prototype?
-    // alter array items
-    //book index, if read => unread, if unread => read
-    // toggle read status
-}
-*/
-//function editBook(){} // move to prototype?
 
 function displayBooks() {
     const bookdisplay = document.querySelector('.bookdisplay')
@@ -72,7 +49,7 @@ function displayBooks() {
         sectionOne.classList.add('sectionOne');
         card.append(sectionOne);
 
-        card.dataset.number = (Number(i) + 1);      // card.dataList.add(data-key)
+        card.dataset.number = (Number(i) + 1);
         let bookNumber = document.createElement('div')
         bookNumber.textContent = `${card.dataset.number}.`
         bookNumber.classList.add('bookNumber')
@@ -101,6 +78,7 @@ function displayBooks() {
         removebtn.classList.add('remove');
         removebtn.textContent = 'REMOVE';
         sectionButtons.append(removebtn);
+
         removebtn.addEventListener('click', () => {
             if (library[i]!= undefined) {
                 removeBook(i);
@@ -118,9 +96,7 @@ function displayBooks() {
         readtxt.classList.add('readbtn');
         readtxt.textContent = `${library[i].read}`;
         sectionButtons.append(readtxt);
-        // convert remove/read to button corresponds with number, alter array
-        // section two for read and remove buttons
-        // align buttons (try grid auto rows column start/end)
+
         readtxt.addEventListener('click', () => {
             if (library[i].read == 'Unread') {
                 library[i].read = 'Read'
@@ -133,6 +109,8 @@ function displayBooks() {
     }
 
 };
+
+
 
 window.addEventListener("DOMContentLoaded", () => {
     const submitbtn = document.querySelector('#submit');
@@ -158,47 +136,10 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 });
 
-
-
-//addBookToLibrary('ogngh', 'fsda', '6', 'unread')
-//addBookToLibrary('fxcvdvdasdad', 'fsdfsASs', '6', 'read')
-
-
-
-    // display in DOM
-        
-//Write a function that loops through the array and displays each book on the page.
-//You can display them in some sort of table, or each on their own “card”.
-//It might help for now to manually add a few books to your array so you can see the display.
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// PREVENT DUPLICATION ***
-
-// submit add event listener, prevent default ***
-// trigger add function, pass params ***
-
-// if checked read/unread, green/red
-// add remove and toggle read buttons, ckeck icon :after
-
-
+// add remove and toggle read buttons, check icon :after
 // style/position/popup form
 // sign in/storage? array as cookies, display onload
 // move sections
 // experiment with layout, color scheme, shadows, gradients, icons
 // rearrange and edit books
 
-
-
-
-
-// combine addbook and displaybook functions, refactor
-//function rearrange() {}
-
-//for in,   onscreen txtcontent, append child to bookdisplay,
-// css, book variable names,
-//  addBookToLibrary('fat', 'fatty', '23', 'no')
-
-//let i = 0; i <= library.length; i++
-
-// const para = bookdisplay.createElement("div");
-// const node = document.createTextNode("This is a paragraph.");

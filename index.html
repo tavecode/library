@@ -9,38 +9,31 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div class="header">
-        <h1>Library</h1>
-        <div class="toolbar">
-            <!-- <button>Rearrange</button> -->
+    <div class="wrapper">
+        <div class="header">
+            <h1>Library</h1>
         </div>
-    </div>
-    <div class="bookdisplay"></div>
-    <form>
-        <h1>Add Book</h1>
-        <label for="title"></label>
-        <input type="text" placeholder="title" id="title" name="title" maxlength="50" required>
-
-        <label for="author"></label>
-        <input type="text" placeholder="author" id="author" name="author" maxlength="50" required>
-
-        <label for="pages"></label>
-        <input type="number" placeholder="page count" id="pages" name="pages" max="10000" required>
-
-        <fieldset class="reading">
-            <label for="read">Read</label>
-            <input type="radio" id="read" name="readstatus" value="Read" required>
-
-            <label for="unread">Unread</label>
-            <input type="radio" id="unread" name="readstatus" value="Unread" required>
-            <button type="submit" id="submit">Submit</button>
-        </fieldset>
-
-    </form>
-    <div class="footer">
-        <a href="">Source Code</a>
-        <a href="">Portfolio</a>
-        addBookToLibrary('ogngh', 'fsda', '6', 'unread') addBookToLibrary('fxcvdvdasdad', 'fsdfsASs', '6', 'read')
+        <div class="bookdisplay"></div>
+        <form>
+            <h1>ADD BOOK:</h1>
+            <label for="title"></label>
+            <input type="text" placeholder="title:" id="title" name="title" maxlength="50" required>
+            <label for="author"></label>
+            <input type="text" placeholder="author:" id="author" name="author" maxlength="50" required>
+            <label for="pages"></label>
+            <input type="number" placeholder="page count:" id="pages" name="pages" max="10000" required>
+            <fieldset class="reading">
+                <label for="read">Read</label>
+                <input type="radio" id="read" name="readstatus" value="Read" required>
+                <label for="unread">Unread</label>
+                <input type="radio" id="unread" name="readstatus" value="Unread" required>
+                <button type="submit" id="submit">Submit</button>
+            </fieldset>
+        </form>
+        <div class="footer">
+            <a href="https://github.com/tavecode/library" target="_blank">Source Code</a>
+            <a href="https://github.com/tavecode?tab=repositories" target="_blank">Portfolio</a>
+        </div>
     </div>
 </body>
 </html>
