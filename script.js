@@ -93,13 +93,25 @@ function displayBooks() {
         pagestxt.textContent = `${library[i].pages} pages`;
         sectionOne.append(pagestxt);
 
-        let readtxt = document.createElement('div');
+        let readtxt = document.createElement('button');
         readtxt.classList.add('read');
         readtxt.textContent = `${library[i].read}`;
         card.append(readtxt);
+        // convert remove/read to button corresponds with number, alter array
+        // section two for read and remove buttons
+        // align buttons (try grid auto rows column start/end)
+        readtxt.addEventListener('click', () => {
+            if (library[i].read == 'Unread') {
+                library[i].read = 'Read'
+            }
+            else if (library[i].read == 'Read') {
+                library[i].read = 'Unread'
+            }
+            displayBooks();
+        });
     }
 
-}
+};
 
 window.addEventListener("DOMContentLoaded", () => {
     const submitbtn = document.querySelector('#submit');
