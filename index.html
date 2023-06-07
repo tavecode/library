@@ -19,13 +19,13 @@
     <form>
         <h1>Add Book</h1>
         <label for="title"></label>
-        <input type="text" placeholder="title" id="title" name="title" required>
+        <input type="text" placeholder="title" id="title" name="title" maxlength="50" required>
 
         <label for="author"></label>
-        <input type="text" placeholder="author" id="author" name="author" required>
+        <input type="text" placeholder="author" id="author" name="author" maxlength="50" required>
 
         <label for="pages"></label>
-        <input type="number" placeholder="page count" id="pages" name="pages" required>
+        <input type="number" placeholder="page count" id="pages" name="pages" max="10000" required>
 
         <fieldset class="reading">
             <label for="read">Read</label>

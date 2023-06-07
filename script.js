@@ -19,6 +19,9 @@ function addBookToLibrary(title, author, pages, read) {
 };
 
 function removeBook(index) {
+    // select by nth child? input (numbered books)?
+
+
   //  let index = library.indexOf(value);
     if (index > -1) {
       library.splice((index-1), 1);
@@ -36,7 +39,8 @@ function removeBook(index) {
 /*
 readtxt.addEventListener('click' () => {
     identify index
-    alter read
+    if statement (if this.read ==)
+    alter read (this.read =)
     update display
 });
 
@@ -87,6 +91,8 @@ function displayBooks() {
         readtxt.classList.add('read');
         readtxt.textContent = `${library[i].read}`;
         card.append(readtxt);
+
+        card.dataset.number = (Number(i) + 1);      // card.dataList.add(data-key)
     }
 
 }
